@@ -8,7 +8,7 @@ require("dotenv").config()
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin:"*"}))
 
 const dbUrl = "mongodb+srv://dipendrasingh:Dipendra1234@cluster0.nw3urnu.mongodb.net/?retryWrites=true&w=majority"
 
