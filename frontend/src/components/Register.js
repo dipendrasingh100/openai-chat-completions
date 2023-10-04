@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { host } from '../host'
 
 const Register = () => {
-  const [inputdata, setInput] = useState({ firstname: "", lastname: "", age: "", email: "", password: "", address: "", gender: "" })
+  const [inputdata, setInput] = useState({ firstname: "", lastname: "", age: "", email: "", password: "", address: "", gender: "", profession:"", aoi:"" })
   const [errordata, setError] = useState({ email: "", password: "", other: "" })
 
   const navigate = useNavigate()
@@ -92,6 +92,16 @@ const Register = () => {
         <div className="inp-container">
           <label>Address</label>
           <input type="text" name='address' onChange={handleChange} value={inputdata.address} />
+          <p></p>
+        </div>
+        <div className="inp-container">
+          <label>Profession*</label>
+          <input type="text" name='profession' onChange={handleChange} value={inputdata.profession} />
+          <p></p>
+        </div>
+        <div className="inp-container">
+          <label>Area of Interest*</label>
+          <input type="text" name='aoi' onChange={handleChange} value={inputdata.aoi} />
           <p></p>
         </div>
         <div className='footer flex'>

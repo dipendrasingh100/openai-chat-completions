@@ -7,7 +7,7 @@ const LandingPage = () => {
     const [status, setStatus] = useState(true)
 
     return (
-        <div className="main-container flex center h-100">
+        <div className="main-container flex center">
             <div className="container">
                 <div className="header">
                     <div className={`login ${status ? "wh" : ""}`} onClick={() => setStatus(true)}>Login</div>

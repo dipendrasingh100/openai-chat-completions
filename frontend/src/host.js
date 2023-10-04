@@ -1,1 +1,1 @@
-export const host = 'https://openchat-dun.vercel.app'
+export const host = 'https://openchat-api-mlnl.onrender.com'
