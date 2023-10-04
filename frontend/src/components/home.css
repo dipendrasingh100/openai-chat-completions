@@ -1,0 +1,109 @@
+.app-container {
+    display: flex;
+}
+
+.chatBox {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+header {
+    text-align: center;
+    background-color: #414141;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.sidebar {
+    height: 100vh;
+    color: #fff;
+    width: 300px;
+    background-color: #282828;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: transparent;
+
+}
+
+.sidebar ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover,
+.sidebar ul .selected {
+    background-color: #555d5e;
+}
+
+main>div:first-child {
+    height: 80vh;
+    overflow-y: auto;
+    /* border: 1px solid black; */
+}
+
+.main-container {
+    /* padding: 0 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.user-inp form {
+    margin-top: 10px;
+    padding: 0 10%;
+    width: 100%;
+    display: flex;
+}
+
+input:focus {
+    outline: none;
+}
+
+.user-inp button {
+    background-color: rgb(61, 61, 218);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.user-inp button:hover {
+    background-color: rgba(57, 57, 252, 0.76) !important;
+}
+
+.block {
+    padding: 10px 10%;
+    margin: 10px 0;
+}
+
+.ques {
+    background-color: #555d5e;
+    color: #fff;
+}
+
+.chatBox .main-container {
+    height: 100%;
+}
