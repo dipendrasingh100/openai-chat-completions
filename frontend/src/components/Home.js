@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
     const [message, setMessage] = useState("")
+    const [side, setSide] = useState(false)
     const [chat, setChat] = useState([])
 
     const navigate = useNavigate()
@@ -16,11 +17,11 @@ const Home = () => {
     const sendRequest = async (msg) => {
         try {
             return await axios.post(`${host}/completions`, { prompt: msg }, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${token}`
-                            }
-                        });
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
         } catch (err) {
             return err.response
         }
@@ -71,18 +72,18 @@ const Home = () => {
             console.log(res.data);
             return navigate("/account/login")
         }
-        else if(res.status === 500){
+        else if (res.status === 500) {
             alert('you have reached your free api limit')
-        }else{
+        } else {
             console.log(res.data);
             const { content } = res.data.choices[0].message
-    
+
             const completion = content.replace(/\n/g, " ")
-    
+
             const resarry = completion.split("  ")
-    
+
             handleResponse(resarry)
-    
+
             setChat([...chat, { "prompt": message, "completion": resarry }])
         }
     }
@@ -92,7 +93,8 @@ const Home = () => {
     }
     return (
         <div className='app-container'>
-            <aside className='sidebar'>
+            <div className="ham" onClick={() => setSide(!side)}>←</div>
+            <aside className={`sidebar ${side ? "show" : null}`}>
                 <h2>Q&A</h2>
                 <button onClick={handleNewChat}>New Chat</button>
                 <ul>
@@ -110,7 +112,7 @@ const Home = () => {
 
                     <div className="user-inp" onSubmit={handleSubmit}>
                         <form>
-                            <input type="text" value={message} onChange={e => setMessage(e.target.value)} placeholder='ask me anything..'/>
+                            <input type="text" value={message} onChange={e => setMessage(e.target.value)} placeholder='ask me anything..' />
                             <button type='submit'>&gt;</button>
                         </form>
                     </div>

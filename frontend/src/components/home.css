@@ -107,3 +107,25 @@ input:focus {
 .chatBox .main-container {
     height: 100%;
 }
+
+.ham{
+    display: none;
+    position: absolute;
+    background-color: #a79c9c;
+    font-size: 2rem;
+    padding: 10px;
+    z-index: 100;
+}
+
+@media screen and (max-width:500px) {
+    .ham{
+        display: block;
+    }
+    .sidebar{
+        position: absolute;
+        left: -300px;
+    }
+    .show{
+        left: 0;
+    }
+}
