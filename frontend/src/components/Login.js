@@ -60,13 +60,13 @@ const Login = () => {
         <div className='login-form'>
             <form onSubmit={handleSubmit}>
                 <div className="inp-container">
-                    <input type="email" name='email' required value={inputdata.email} onChange={handleChange} />
                     <label>Email</label>
+                    <input type="email" name='email' required value={inputdata.email} onChange={handleChange} />
                     <p>{errordata.email}</p>
                 </div>
                 <div className="inp-container">
-                    <input type="password" name='password' required value={inputdata.password} onChange={handleChange} />
                     <label>Password</label>
+                    <input type="password" name='password' required value={inputdata.password} onChange={handleChange} />
                     <p>{errordata.password}</p>
                 </div>
                 <div className="footer flex">

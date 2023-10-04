@@ -43,7 +43,7 @@ input {
 }
 
 .inp-container label{
-  position: absolute;
+  /* position: absolute; */
   left: 10px;
   top: 10px;
   padding: 0 5px;
@@ -52,11 +52,11 @@ input {
   pointer-events: none;
 }
 
-.inp-container input:valid + label,
+/* .inp-container input:valid + label,
 .inp-container input:focus + label{
   top: -10px;
   font-size: 0.8rem;
-}
+} */
 
 .btn-primary {
   /* float: right; */

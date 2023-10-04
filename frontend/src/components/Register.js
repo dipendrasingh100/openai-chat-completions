@@ -4,14 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import { host } from '../host'
 
 const Register = () => {
-  const [inputdata, setInput] = useState({ name: "", phone: "", email: "", password: "" })
+  const [inputdata, setInput] = useState({ firstname: "", lastname: "", age: "", email: "", password: "", address: "", gender: "" })
   const [errordata, setError] = useState({ email: "", password: "", other: "" })
 
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
     const checkEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputdata.email)
     const passwordCheck = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(inputdata.password)
 
@@ -58,24 +57,42 @@ const Register = () => {
     <div className='register-form'>
       <form onSubmit={handleSubmit} autoComplete="off">
         <div className="inp-container">
-          <input type="text" name='name' required onChange={handleChange} value={inputdata.name} />
-          <label>Name</label>
+          <label>First Name*</label>
+          <input type="text" name='firstname' required onChange={handleChange} value={inputdata.firstname} />
           <p></p>
         </div>
         <div className="inp-container">
-          <input type="text" name='phone' required onChange={handleChange} value={inputdata.phone} />
-          <label>Mobile Number</label>
+          <label>Last Name</label>
+          <input type="text" name='lastname' onChange={handleChange} value={inputdata.lastname} />
           <p></p>
         </div>
         <div className="inp-container">
+          <label>Email*</label>
           <input type="email" name='email' required onChange={handleChange} value={inputdata.email} />
-          <label>Email</label>
           <p>{errordata.email}</p>
         </div>
         <div className="inp-container">
+          <label>Password*</label>
           <input type="password" name='password' required onChange={handleChange} value={inputdata.password} />
-          <label>Password</label>
           <p>{errordata.password}</p>
+        </div>
+        <div className="inp-container">
+          <label>Age</label>
+          <input type="number" name='age' onChange={handleChange} value={inputdata.age} />
+          <p></p>
+        </div>
+        <div className="inp-container">
+          <span>Gender: </span>
+          <select name='gender' onChange={handleChange} >
+            <option value="" >select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div className="inp-container">
+          <label>Address</label>
+          <input type="text" name='address' onChange={handleChange} value={inputdata.address} />
+          <p></p>
         </div>
         <div className='footer flex'>
           <p>{errordata.other}</p>
